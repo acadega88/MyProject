@@ -33,6 +33,7 @@ hs_err_pid*
 #Idea
 .idea
 *.iml
+
 #Visual Studio Code
 .vscode
 debug.log
