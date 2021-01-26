@@ -1,5 +1,6 @@
 package lib.webDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import lib.utils.ConfigProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,8 +25,8 @@ public class WebDriverFactory {
         String edgeBrowser = "edge";
 
         if (browser.equalsIgnoreCase(chromeBrowser)) {
-            //WebDriverManager.chromedriver().driverVersion("86").setup();
-            System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
+            WebDriverManager.chromedriver().setup();
+            //System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
             ChromeOptions options = new ChromeOptions();
             Map<String, Object> prefs = new HashMap<>();
             prefs.put("profile.default_content_settings.popups", 0);
@@ -80,12 +81,12 @@ public class WebDriverFactory {
             }
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase(firefoxBrowser)) {
-            //WebDriverManager.firefoxdriver().setup();
-            System.setProperty("webdriver.gecko.driver", "./src/main/resources/drivers/geckodriver.exe");
+            WebDriverManager.firefoxdriver().setup();
+            //System.setProperty("webdriver.gecko.driver", "./src/main/resources/drivers/geckodriver.exe");
             driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase(edgeBrowser)) {
-            //WebDriverManager.edgedriver().setup();
-            System.setProperty("webdriver.edge.driver", "./src/main/resources/drivers/msedgedriver.exe");
+            WebDriverManager.edgedriver().setup();
+            //System.setProperty("webdriver.edge.driver", "./src/main/resources/drivers/msedgedriver.exe");
             driver = new EdgeDriver();
         } else {
             System.out.println("Error");
