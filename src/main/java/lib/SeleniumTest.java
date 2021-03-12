@@ -1,7 +1,5 @@
 package lib;
 
-import lib.pages.HomePage;
-import lib.pages.LoginPage;
 import lib.utils.Logger;
 import lib.utils.UserProperties;
 import org.openqa.selenium.WebDriver;
