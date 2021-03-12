@@ -15,8 +15,6 @@ public class SeleniumTest {
 
 
     public void loginToApp(WebDriver driver) {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(sEmail, sPassword);
 
     }
 
