@@ -1,5 +1,7 @@
 package lib;
 
+import lib.pages.HomePage;
+import lib.pages.WorkspacePage;
 import lib.utils.Logger;
 import lib.utils.UserProperties;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +14,11 @@ public class SeleniumTest {
     public String sPassword = UserProperties.getPassword();
 
 
-    public void loginToApp(WebDriver driver) {
+    public WorkspacePage loginToApp(WebDriver driver) {
+        HomePage homePage = new HomePage(driver);
+        WorkspacePage workspacePage = homePage.clickSignInLink()
+                .signIn(sEmail, sPassword);
+        return new WorkspacePage(driver);
 
     }
 
